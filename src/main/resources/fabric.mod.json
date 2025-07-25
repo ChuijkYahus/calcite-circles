@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "calcite",
+	"version": "${version}",
+	"name": "Calcite Circles",
+	"description": "A Hexcasting addon about recording and playing back particles and sounds.",
+	"authors": [
+		"miyucomics"
+	],
+	"contact": {
+		"homepage": "https://github.com/miyucomics/calcite",
+		"sources": "https://github.com/miyucomics/calcite"
+	},
+	"license": "MIT",
+	"icon": "assets/calcite/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"adapter": "kotlin",
+				"value": "miyucomics.calcite.CalciteMain"
+			}
+		],
+		"client": [
+			{
+				"adapter": "kotlin",
+				"value": "miyucomics.calcite.CalciteClient"
+			}
+		]
+	},
+	"mixins": [
+		"calcite.mixins.json"
+	],
+	"depends": {
+		"minecraft": "1.20.1",
+		"fabricloader": ">=0.16.7",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.10.10+kotlin.1.9.10",
+		"hexcasting": ">=0.11.1-7-pre-646"
+	}
+}
