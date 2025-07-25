@@ -1,0 +1,9 @@
+# Calcite Circles
+
+I never liked how Hexcasting spell circles worked. I find writing slates individually before placing clunky and tedious, and while you can make a Hex to "print" circles, they are inconsistent at best without addons. In exchange for all that effort, you get the slowest method of casting in base Hexcasting and most likely in all addons. I never find myself thinking "wow, that was a neat Hex I just wrote, let's put it in a circle."
+
+This addon adds chalk, an entirely different system that appeals more to me and I think it may appeal to others too. You craft chalk out of the calcite surrounding geodes, use Scribe's Gambit to write a pattern list into the chalk, and just right-click to draw. It is just that easy. A single chalk can draw 64 patterns. The goal is to make circles more friendly to being the next step after drafting a Hex.
+
+Chalk is capable of infinite loops. Unlike an impetus where a "starter" block is distinct from a slate, in chalk, the starter block is just a pattern you can draw. The wave simply walks forward from the starter until it completes a loop, but there is nothing stopping it from carrying on after that loop, essentially creating a constantly active spinning circle. The stack clears between passes of the loop. All iotas not just pattern ones are a chalk pattern as a form of iota embedding. To keep info between instances, you can modify the circle after it reaches the ignition block. The only way a chalk circle can explicitly stop is if it were told in its hex to stop after this iteration or someone broke a block.
+
+Chalk does not support impetii, directrices, or any other loci added by addons ( due to the way it works, that would be impossible. Casting doesn't happen until it has looped around, there is no casting state to modify ).
