@@ -11,6 +11,13 @@ import net.minecraft.world.PersistentState
 class WaveManager : PersistentState() {
 	val waves: MutableList<Wave> = mutableListOf()
 
+	fun tick(world: ServerWorld) {
+		for (wave in getManager(world).waves)
+			wave.tick(world)
+		waves.removeIf { it.canRemove }
+		markDirty()
+	}
+
 	override fun writeNbt(nbt: NbtCompound): NbtCompound {
 		return nbt.apply {
 			putList("waves", NbtList().apply {
@@ -30,8 +37,7 @@ class WaveManager : PersistentState() {
 		fun getManager(world: ServerWorld): WaveManager = world.persistentStateManager.getOrCreate(::createFromNbt, ::WaveManager, "calcite")
 
 		fun tick(world: ServerWorld) {
-			for (wave in getManager(world).waves)
-				wave.tick(world)
+			getManager(world).tick(world)
 		}
 	}
 }

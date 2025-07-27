@@ -17,8 +17,7 @@ class ActivatorItem : Item(Settings().maxCount(1)) {
 			return ActionResult.FAIL
 		if (world.isClient)
 			return ActionResult.success(true)
-		WaveManager.getManager(world as ServerWorld).waves.clear()
-		WaveManager.getManager(world).waves.add(Wave(pos, mutableListOf(pos), mutableListOf(), 0L, Direction.UP, Direction.NORTH))
+		WaveManager.getManager(world as ServerWorld).waves.add(Wave(pos, mutableListOf(pos), mutableListOf((world.getBlockEntity(pos) as ChalkBlockEntity).iota), 0L, Direction.UP, Direction.NORTH))
 		return ActionResult.success(false)
 	}
 }

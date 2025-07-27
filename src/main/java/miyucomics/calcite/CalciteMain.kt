@@ -24,6 +24,7 @@ class CalciteMain : ModInitializer {
 
 	companion object {
 		fun id(string: String) = Identifier("calcite", string)
+		val PARTICLE_PACKET = id("effects")
 		val CHALK_BLOCK: ChalkBlock = ChalkBlock()
 		val CHALK_BLOCK_ENTITY: BlockEntityType<ChalkBlockEntity> = BlockEntityType.Builder.create(::ChalkBlockEntity, CHALK_BLOCK).build(null)
 	}
