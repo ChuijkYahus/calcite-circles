@@ -27,7 +27,7 @@ class ChalkItem : Item(Settings().maxCount(1)), IotaHolderItem {
 			list.add("calcite.chalk.queue".asTranslatedComponent(IotaType.getDisplay(stack.getCompound("queue"))))
 	}
 
-	override fun useOnBlock(context: ItemUsageContext): ActionResult? {
+	override fun useOnBlock(context: ItemUsageContext): ActionResult {
 		val context = ItemPlacementContext(context)
 		val pos = context.blockPos
 		val world = context.world
