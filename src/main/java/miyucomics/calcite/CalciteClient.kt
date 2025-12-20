@@ -2,6 +2,7 @@ package miyucomics.calcite
 
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.client.ScryingLensOverlayRegistry
+import at.petrak.hexcasting.api.mod.HexConfig.client
 import com.mojang.datafixers.util.Pair
 import miyucomics.calcite.chalk.ChalkBlockEntity
 import miyucomics.calcite.chalk.ChalkBlockEntityRenderer
@@ -23,7 +24,7 @@ class CalciteClient : ClientModInitializer {
 			lines.add(Pair(ItemStack.EMPTY, IotaType.getDisplay((world.getBlockEntity(pos) as ChalkBlockEntity).iota)))
 		}
 
-		ClientPlayNetworking.registerGlobalReceiver(CalciteMain.PARTICLE_PACKET) { client, handler, buf, responseSender ->
+		ClientPlayNetworking.registerGlobalReceiver(CalciteMain.PARTICLE_PACKET) { client, _, buf, _ ->
 			val pos = Vec3d(buf.readDouble(), buf.readDouble(), buf.readDouble())
 			val blockPos = BlockPos.ofFloored(pos)
 			client.particleManager.addParticle(BlockDustParticle(client.world, pos.x, pos.y, pos.z, 0.5, 0.5, 0.5, Blocks.CALCITE.defaultState, blockPos))
