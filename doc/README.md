@@ -34,7 +34,7 @@ For local testing, create a file called `.env` in the repo root following this t
 ```sh
 GITHUB_REPOSITORY=miyucomics/calcite
 GITHUB_SHA=main
-GITHUB_PAGES_URL=https://miyucomics.github.io/calcite/
+GITHUB_PAGES_URL=https://miyucomics.github.io/calcite-circles/
 ```
 
 Useful commands:
